@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:portfolio/app/modules/portfolio/views/blog_view.dart';
-import 'package:portfolio/app/modules/portfolio/views/contact_view.dart';
 
+import 'package:portfolio/app/modules/portfolio/views/portfolio_view.dart';
+import 'package:portfolio/app/modules/portfolio/views/contact_view.dart';
 import 'package:portfolio/app/modules/portfolio/views/home_view.dart';
 
 part 'app_routes.dart';
@@ -18,8 +18,8 @@ class AppPages {
       transition: Transition.zoom,
     ),
     GetPage(
-      name: _Paths.BLOG,
-      page: () => BlogView(),
+      name: _Paths.PORTFOLIO,
+      page: () => PortfolioView(),
       transition: Transition.zoom,
     ),
     GetPage(

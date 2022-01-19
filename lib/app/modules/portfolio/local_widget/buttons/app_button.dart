@@ -25,7 +25,6 @@ class Appbutton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // for (int i = 0; i < ButtonName.length; i++)
         Wrap(
           children: [
             for (int i = 0; i < ButtonName.length; i++)

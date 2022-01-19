@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import '../local_widget/contact/contact.dart';
 import '../local_widget/appbar/app_bar.dart';
 
 class ContactView extends GetView {
@@ -13,12 +14,7 @@ class ContactView extends GetView {
         toolbarHeight: 120,
         title: MyAppBar(),
       ),
-      body: Center(
-        child: Text(
-          'ContactView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: MyContact(),
     );
   }
 }

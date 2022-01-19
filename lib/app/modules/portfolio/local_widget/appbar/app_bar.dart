@@ -63,14 +63,14 @@ class MyAppBar extends StatelessWidget {
               ),
               InkWell(
                 child: Text(
-                  'Blog',
+                  'Portfolio',
                   style: GoogleFonts.oswald(
                     fontSize: 15,
                     color: Colors.black,
                   ),
                 ),
                 onTap: () {
-                  Get.offAndToNamed(Routes.BLOG);
+                  Get.offAndToNamed(Routes.PORTFOLIO);
                 },
               ),
               SizedBox(

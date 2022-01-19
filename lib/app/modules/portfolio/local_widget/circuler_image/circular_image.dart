@@ -8,7 +8,7 @@ class CircularImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(120),
       child: InkWell(
-        // hoverColor: ,
+        hoverColor: Colors.pink,
         child: Image.asset(
           'assets/images/Image.jpg',
           height: 220,

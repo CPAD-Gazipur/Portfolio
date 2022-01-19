@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:portfolio/app/modules/portfolio/local_widget/portfolio/portfolio.dart';
 import '../local_widget/appbar/app_bar.dart';
 
-class BlogView extends GetView {
+class PortfolioView extends GetView {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,12 +14,7 @@ class BlogView extends GetView {
         toolbarHeight: 120,
         title: MyAppBar(),
       ),
-      body: Center(
-        child: Text(
-          'BlogView is working',
-          style: TextStyle(fontSize: 20),
-        ),
-      ),
+      body: MyPortfolio(),
     );
   }
 }
