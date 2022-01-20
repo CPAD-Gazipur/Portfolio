@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:portfolio/app/modules/portfolio/local_widget/portfolio/portfolio.dart';
+import '../local_widget/cards/card.dart';
 import '../local_widget/appbar/app_bar.dart';
 
 class PortfolioView extends GetView {
@@ -14,7 +14,9 @@ class PortfolioView extends GetView {
         toolbarHeight: 120,
         title: MyAppBar(),
       ),
-      body: MyPortfolio(),
+      body: Center(
+        child: MyCard(),
+      ),
     );
   }
 }

@@ -1,51 +1,71 @@
 import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Appbutton extends StatelessWidget {
   Appbutton({Key? key}) : super(key: key);
 
-  List<IconData> ButtonIcon = [
-    FontAwesomeIcons.github,
-    FontAwesomeIcons.linkedinIn,
-    FontAwesomeIcons.twitter,
-    FontAwesomeIcons.facebook,
-  ];
-
-  List<String> ButtonName = [
-    'GitHub',
-    'LinkedIn',
-    'Twetter',
-    'Facebook',
+  List<Map> socialButtons = [
+    {
+      'name': 'GitHub',
+      'icon': FontAwesomeIcons.github,
+      'link': 'https://github.com/abrarinfo',
+    },
+    {
+      'name': 'LinkedIn',
+      'icon': FontAwesomeIcons.linkedinIn,
+      'link': 'https://linkedin.com',
+    },
+    {
+      'name': 'Twetter',
+      'icon': FontAwesomeIcons.twitter,
+      'link': 'https://twitter.com/abrarul_info',
+    },
+    {
+      'name': 'Facebook',
+      'icon': FontAwesomeIcons.facebook,
+      'link': 'https://www.facebook.com/abrarulinfo',
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Wrap(
           children: [
-            for (int i = 0; i < ButtonName.length; i++)
+            for (int i = 0; i < socialButtons.length; i++)
               Container(
+                width: 200,
                 margin: EdgeInsets.all(10),
                 child: ElevatedButton(
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(ButtonIcon[i]),
+                      Icon(
+                        socialButtons[i]['icon'],
+                      ),
                       SizedBox(
                         width: 7,
                       ),
                       Text(
-                        ButtonName[i],
+                        socialButtons[i]['name'],
                         style: TextStyle(
                           fontFamily: 'Inconsolata',
                         ),
                       ),
                     ],
                   ),
-                  onPressed: () {},
+                  onPressed: () async {
+                    String url = socialButtons[i]['link'];
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: Colors.pink,
                       shape: RoundedRectangleBorder(
